@@ -1,0 +1,30 @@
+//Here we have used Floyd's Cycle algorithm to slove this:
+//SOURCE CODE:
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+
+    ListNode* middleNode(ListNode* head) {
+        //in case of two middle nodes :
+        //to get first as the middle node: make fast=head->next
+        //to get second as the middele node : make fast=head
+    ListNode* slow=head;    
+    ListNode* fast=head; 
+    while(fast != NULL && fast->next != NULL ){
+        fast=fast->next->next;
+        slow=slow->next;
+    }
+
+  return slow;
+    }
+};
