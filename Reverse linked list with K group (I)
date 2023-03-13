@@ -1,4 +1,4 @@
-// REVERSING TYHE LINKED LIST WITH K GROUPS BUT THE NUMBER OF NODES IS THE MULTIPLE OF K
+// REVERSING TYHE LINKED LIST WITH K GROUPS 
 
 SOURCE CODE:
 
@@ -14,11 +14,26 @@ SOURCE CODE:
  */
 class Solution {
 public:
+  int length(ListNode* &head){
+      ListNode* p=head;
+      int ans=0;
+      while(p != NULL){
+          ans++;
+          p=p->next;
+      }
+      return ans;
+  }
+    ListNode* reverseKGroup(ListNode* head, int k) {
+
+
 
 
         //STEP:1
         if(head==NULL)
         return NULL;
+//when number of nodes is less then k then no reversal possible: so just return head
+        if(length(head)<k)
+        return head;
         //step2:
          ListNode* prev=NULL;
          ListNode* next=NULL;
