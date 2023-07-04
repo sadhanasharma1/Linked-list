@@ -15,7 +15,7 @@ class Solution {
 public:
 
     ListNode* middleNode(ListNode* head) {
-        //in case of two middle nodes :
+        //in case of two middle nodes (i.e no. of nodes are even):
         //to get first as the middle node: make fast=head->next
         //to get second as the middele node : make fast=head
     ListNode* slow=head;    
